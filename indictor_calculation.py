@@ -3,14 +3,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 torch.set_default_dtype(torch.float64)
 device=torch.device('cuda:1')
-
-J=2.0
-T=5.0
-L=8
-a=0.4
+'''hyperparameters
+J
+T
+L
+a   #Order parameter interval
+num_T #numbers of Order parameters
+boundary
+'''
 y=[]
-num_T=11
-boundary="tri"
 for i in range (1,num_T-1):
 
     lnp1=torch.load(f"L={L} {boundary} J={J:.1f} sample_logp.pth")[f"T={T+i*a-a:.1f}"][i]
@@ -27,3 +28,4 @@ plt.xlabel('T')
 plt.ylabel('I')
 # plt.savefig(f'I_16x16.svg', format='svg')
 plt.show()
+
