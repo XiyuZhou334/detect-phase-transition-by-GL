@@ -1,2 +1,2 @@
-# test.py
-测试文件
+# main.py
+main
