@@ -1,2 +1,2 @@
-# huawei_test.py
+# test.py
 测试文件
