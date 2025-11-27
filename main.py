@@ -146,8 +146,8 @@ for epoch in range(epochs):
     ax.autoscale_view()
     fig.canvas.draw()
     fig.canvas.flush_events()
-# plt.savefig(f'L=16loss_beta={beta:.2f}.svg', format='svg')
 plt.ioff()
 plt.show()
 
 print(f'train_time:{train_time:.2f}s')
+
