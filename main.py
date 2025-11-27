@@ -93,16 +93,16 @@ class PixelCNN(nn.Module):
         log_p = (torch.log(x_hat + epsilon) * mask + torch.log(1 - x_hat + epsilon) * (1 - mask))
         log_p = log_p.view(log_p.shape[0], -1).sum(dim=1)
         return log_p
-T=5.0
-L = 8          
-kernel=5 
-J=2.0
-boundary = 'tri'
+"""hyperparams
+L     #size of configuration     
+kernel
+boundary 
 epochs = 3000
 lr = 0.0001
 batch_size=1000
 seed=69
 hyperparams = {"L": L, "kernel": kernel}
+"""
 
 plt.ion()
 fig, ax = plt.subplots()
@@ -149,4 +149,5 @@ for epoch in range(epochs):
 # plt.savefig(f'L=16loss_beta={beta:.2f}.svg', format='svg')
 plt.ioff()
 plt.show()
+
 print(f'train_time:{train_time:.2f}s')
